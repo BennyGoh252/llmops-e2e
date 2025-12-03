@@ -1,5 +1,5 @@
-# Trigger pipeline
-name: LLMOps CI Pipeline_Benny
+# Trigger pipeline run 2
+name: LLMOps CI Pipeline_Benny_run3
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 env:
   REGISTRY: docker.io
+  IMAGE_NAME_LC: bennygoh22/llmops-e2e
   IMAGE_TAG: ${{ github.sha }}
 
 jobs:
