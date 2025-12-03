@@ -33,9 +33,11 @@ jobs:
           sudo mv trivy /usr/local/bin/
 
       - name: Scan Docker image with Trivy
-        run: |
-          trivy image --severity HIGH,CRITICAL llmops-e2e:latest
-
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: llmops-e2e:latest
+          severity: HIGH,CRITICAL
+          
       - name: Tag & push image
         run: |
           docker tag llmops-e2e:latest ${{ secrets.DOCKER_USERNAME }}/llmops-e2e:latest
