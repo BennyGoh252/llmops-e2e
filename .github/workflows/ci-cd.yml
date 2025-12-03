@@ -1,4 +1,5 @@
-name: LLMOps CI Pipeline (Free Version)
+# Trigger pipeline
+name: LLMOps CI Pipeline_Benny
 
 on:
   push:
